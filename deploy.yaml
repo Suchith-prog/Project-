@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: devops-container
-          image: manjukolkar/scroll-web:latest
+          image: suchithsuchi/scroll-web:latest
           ports:
             - containerPort: 80
 
