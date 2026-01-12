@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "manjukolkar07/test-dev:latest"
+        DOCKER_IMAGE = "suchithsuchi/test-dev:latest"
         DEPLOY_FILE  = "deploy.yaml"
         DOMAIN       = "micro321.duckdns.org"
     }
@@ -53,7 +53,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: "${BRANCH}",
-                    url: 'https://github.com/manjukolkar/scroll-web.git'
+                    url: 'https://github.com/Suchith-prog/Project-.git'
             }
         }
 
@@ -69,7 +69,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'DOCKER_PASS')]) {
                     sh """
-                    echo \$DOCKER_PASS | docker login -u manjukolkar07 --password-stdin
+                    echo \$DOCKER_PASS | docker login -u suchithsuchi --password-stdin
                     docker push ${DOCKER_IMAGE}
                     """
                 }
