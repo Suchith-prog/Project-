@@ -41,7 +41,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: micro321.duckdns.org
+    - host: micro231.duckdns.org
       http:
         paths:
           - path: /
