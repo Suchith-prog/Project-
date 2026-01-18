@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = "suchithsuchi/test-dev:latest"
         DEPLOY_FILE  = "deploy.yaml"
-        DOMAIN       = "micro321.duckdns.org"
+        DOMAIN       = "micro231.duckdns.org"
     }
 
     stages {
@@ -67,7 +67,7 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'DOCKER_PASS')]) {
+                withCredentials([string(credentialsId: 'docker-hub-pass', variable: 'DOCKER_PASS')]) {
                     sh """
                     echo \$DOCKER_PASS | docker login -u suchithsuchi --password-stdin
                     docker push ${DOCKER_IMAGE}
